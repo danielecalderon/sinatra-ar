@@ -27,10 +27,10 @@ end
 
 post '/delete' do
     user = User.find_by(name: params[:name])
-    if user
+    if !user.nil?
       user.destroy
       "user #{params[:name]} deleted"
     else
-      "user #{params[:name] not found"
+      "user #{params[:name]} not found"
     end
 end
